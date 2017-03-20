@@ -1,0 +1,14 @@
+Step1:
+lines = LOAD '/home/acadgild/hadoop/wordcount.txt' AS (line:chararray);
+
+Step2:
+lines = LOAD '/home/acadgild/hadoop/wordcount.txt' AS (line:chararray);
+
+Step3:
+grouped = GROUP words BY word;
+
+Step 4:
+wordcount = FOREACH grouped GENERATE group, COUNT(words);
+
+Step5:
+DUMP wordcount ;
